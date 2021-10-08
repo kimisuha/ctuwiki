@@ -1,0 +1,105 @@
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Admin Page
+        // CSS only
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous')
+        // JavaScript Bundle with Popper
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ' crossorigin='anonymous')
+        style 
+            include Css/Admin.css
+            include Css/footer.css
+            include Css/menu.css
+            include Css/add.css
+
+    body
+        .header.d-flex.justify-content-around
+            img.img-fluid(src='https://upload.wikimedia.org/wikipedia/vi/6/6c/Logo_Dai_hoc_Can_Tho.svg' alt='logo')
+            .row.menu.m-auto
+                ul.mt-3
+                    li
+                        a(href='#' value='User' onclick='testAlert') User
+                    li
+                        a(href='#' value='Attention') Attention
+                    li
+                        a(href='#' value='Khoa') Khoa
+                    li
+                        a(href='#' value='Nghanh') nghanh
+        .row.content.User
+            table.table.text-light.text-capitalize.text-center
+                thead
+                    tr
+                        th.left(scope='col') ma 
+                        th.text-center(scope='col') ho va ten
+                        th.text-center(scope='col') tuoi
+                tbody
+                each item in user
+                    tr
+                        th.left(scope='row') #{item._id}
+                        td.text-center
+                            p #{item.name}
+                            .add-site
+                        td.text-center #{item.age}
+
+            a.btn.btn-success(href='http://localhost:5000/new-user') add new
+
+        .row.content.Attention
+            table.table.text-light.text-capitalize.text-center
+                thead
+                    tr
+                        th.left(scope='col')  ma
+                        th.text-center(scope='col') tieu de
+                        th.text-center(scope='col') noi dung
+                        th.text-center(scope='col') doi tuong nhan
+                        th.text-center(scope='col') ngay het han
+                tbody
+                each item in atten
+                    tr
+                        th.left(scope='row') #{ item._id }
+                        td.text-center #{ item.title }
+                        td.text-center #{ item.content }
+                        td.text-center #{ item.receiver }
+                        td.text-center #{ item.date }
+                        td.text-center #{ item.create_at }
+
+
+            a.btn.btn-success(href='http://localhost:5000/create-attention') add new
+
+        .row.content.Nganh
+            table.table.text-light.text-capitalize.text-center
+                thead
+                    tr
+                        th.left(scope='col')  ma nghanh
+                        th.text-center(scope='col') ten nghanh
+                        th.text-center(scope='col') gioi thieu nghanh
+                tbody
+                each item in nghanh
+                    tr
+                        th.left(scope='row') #{ item._id }
+                        td.text-center #{ item.tennghanh }
+                        td.text-center #{ item.gioithieu }
+
+            a.btn.btn-success(href='http://localhost:5000/create-nghanh') add new
+
+        .row.content.Khoa
+            table.table.text-light.text-capitalize.text-center
+                thead
+                    tr
+                        th.text-center(scope='col') ma khoa  
+                        th.text-center(scope='col') ten khoa
+                        th.left(scope='col') ten truong khoa
+                        th.left(scope='col') gioi thieu khoa
+                tbody
+                each item in khoa
+                    tr
+                        th.left(scope='row') #{ item._id }
+                        td.text-center #{ item.tenkhoa }
+                        td.text-center #{ item.tentruongkhoa }
+                        td.text-center #{ item.gioithieu }
+            a.btn.btn-success(href='http://localhost:5000/create-khoa') add new
+
+        .footer.mt-2
+            h1 @copyright Bui Thanh Loc B1906514
+        .test

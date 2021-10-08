@@ -1,0 +1,27 @@
+* {
+  text-transform: capitalize;
+}
+* .header {
+  height: 30vh;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: #1d7add;
+}
+* .header img {
+  width: 50%;
+  height: 50%;
+}
+* .header h1 {
+  text-transform: capitalize;
+}
+* .body {
+  height: 50%;
+  margin-top: 0.5rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+* .body .content {
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+}/*# sourceMappingURL=Home.css.map */

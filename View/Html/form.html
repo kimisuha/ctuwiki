@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form card w-75 m-auto bg-black text-light">
+            <form class="text-capitalize" method="POST"
+                action="http://localhost:5000/create-attention">
+                <div class="form-group">
+                    <label for="nghanh_id" class="mb-2">ma nghanh</label>
+                    <input type="text" class="form-control" id="nghanh_id" name="nghanh_id" placeholder="something"  disabled>
+                    <p>error: </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="tennghanh" class="mb-2" >ten nghanh</label>
+                    <input type="text" class="form-control" id="tennghanh" name="tennghanh" placeholder="something" disabled>
+                    <p>error: </p>
+                </div>
+                <div class="form-group">
+                    <label for="gioithieu" class="mb-2" >gioi thieu</label>
+                    <textarea class="form-control" id="gioithieu" name="gioithieu" style="height: 12rem;"></textarea>
+                    <p>error: </p>
+                </div>
+                <button class="btn btn-warning mt-1 mb-2" style="margin-left: 45%;" type="submit">delete</button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.info {
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid white;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+}
+.info .card {
+  width: 18rem;
+}

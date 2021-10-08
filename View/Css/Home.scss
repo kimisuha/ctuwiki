@@ -1,0 +1,36 @@
+* {
+    text-transform: capitalize;
+
+    .header {
+        height: 30vh;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        background-color: #1d7add;
+
+        img {
+            width: 50%;
+            height: 50%;
+        }
+
+        h1 {
+            text-transform: capitalize;
+        }
+    }
+
+    .body {
+        height: 50%;
+        margin-top: 0.5rem;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+
+        
+
+        .content{
+            height: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+
+    
+}

@@ -1,0 +1,29 @@
+.menu {
+    width: 90vh;
+    height: 15%;
+    border-bottom: 1px solid black;
+    border-radius: 0.5rem;
+    background-color: #e7e7e7;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            list-style: none;
+            // margin-right: 14rem;
+            a {
+                text-transform: capitalize;
+                text-decoration: none;
+
+                color: black;
+                font-family: "Gill Sans";
+                font-size: large;
+            }
+
+            a:hover {
+                color: blue;
+            }
+        }
+    }
+}

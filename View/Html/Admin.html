@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../Css/Admin.css">
+    <link rel="stylesheet" href="../Css/footer.css">
+    <link rel="stylesheet" href="../Css/content.css">
+    <link rel="stylesheet" href="../Css/add.css">
+    <script src="../Js/Admin.js"></script>
+</head>
+
+<body>
+    <div class="header d-flex justify-content-around">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">User</a>
+            <a href="#">Attention</a>
+            <a href="#">Nghanh</a>
+            <a href="#">Khoa</a>
+        </div>
+
+        <img src="https://upload.wikimedia.org/wikipedia/vi/6/6c/Logo_Dai_hoc_Can_Tho.svg" alt="logo" class="img-fluid">
+    </div>
+    <span style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776;</span>
+
+    <div class="row content User">
+        <table class="table text-light text-capitalize">
+            <thead>
+                <tr>
+                    <th scope="col" class="left"> </th>
+                    <th scope="col" class="text-center">ho va ten</th>
+                    <th scope="col" class="text-center">khoa</th>
+                    <th scope="col" class="text-center">nghanh</th>
+                    <th scope="col" class="text-center">tuoi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="left">1</th>
+                    <td class="text-center">
+                        <p>something</p>
+                        <div class="add-site">
+
+                        </div>
+                    </td>
+                    <td class="text-center">kt</td>
+                    <td class="text-center">qt</td>
+                    <td class="text-center">33</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="left">2</th>
+                    <td class="text-center">
+                        <p>Jacob</p>
+                        <div class="add-site">
+
+                        </div>
+                    </td>
+                    <td class="text-center">kt</td>
+                    <td class="text-center">qt</td>
+                    <td class="text-center">33</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="left">3</th>
+                    <td class="text-center">
+                        <p>Larry</p>
+                        <div class="add-site">
+
+                        </div>
+                    </td>
+                    <td class="text-center">kt</td>
+                    <td class="text-center">qt</td>
+                    <td class="text-center">33</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="#" class="btn btn-success">add new</a>
+    </div>
+
+    <div class="row content Attention">
+        <table class="table text-light text-capitalize">
+            <thead>
+                <tr>
+                    <th scope="col" class="left"> </th>
+                    <th scope="col" class="text-center">tieu de</th>
+                    <th scope="col" class="text-center">noi dung</th>
+                    <th scope="col" class="text-center">ngay het han</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="left">1</th>
+                    <td class="text-center">
+
+                    </td>
+                    <td class="text-center">kt</td>
+                    <td class="text-center">qt</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="left">2</th>
+                    <td class="text-center">Jacob</td>
+                    <td class="text-center">kt</td>
+                    <td class="text-center">qt</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="left">3</th>
+                    <td class="text-center">Larry</td>
+                    <td class="text-center">kt</td>
+                    <td class="text-center">qt</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row content Nganh">
+        <table class="table text-light text-capitalize">
+            <thead>
+                <tr>
+                    <th scope="col" class="left"> </th>
+                    <th scope="col" class="text-center">nghanh</th>
+                    = <th scope="col" class="text-center">khoa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="left">1</th>
+                    <td class="text-center">
+
+                    </td>
+                    <td class="text-center">kt</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="left">2</th>
+                    <td class="text-center">Jacob</td>
+                    <td class="text-center">kt</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="left">3</th>
+                    <td class="text-center">Larry</td>
+                    <td class="text-center">kt</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row content Khoa">
+        <table class="table text-light text-capitalize">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center"> </th>
+                    <th scope="col" class="text-center">khoa</th>
+                    <th scope="col" class="left">truong khoa</th>
+                    <th scope="col" class="left">so luot khoa khoa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="left">1</th>
+                    <td class="text-center">done</td>
+                    <td class="text-center">kt</td>
+                    <td class="text-center">qt</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="left">2</th>
+                    <td class="text-center">Jacob</td>
+                    <td class="text-center">kt</td>
+                    <td class="text-center">qt</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="left">3</th>
+                    <td class="text-center">Larry</td>
+                    <td class="text-center">kt</td>
+                    <td class="text-center">qt</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer mt-2">
+        <h1>@copyright Bui Thanh Loc B1906514</h1>
+    </div>
+
+    <div class="test">
+
+    </div>
+    <script>
+        $("p").hover(function () {
+            $(".add-site").load("add.html");
+        }, function () {
+            $(".add").remove();
+        }
+        );
+
+    </script>
+</body>
+
+</html>

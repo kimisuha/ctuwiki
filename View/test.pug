@@ -1,0 +1,12 @@
+doctype html
+| PASTE YOUR HTML CODE HERE
+head
+    title Pug
+    script(type='text/javascript').
+        if (foo) bar(1 + 5)
+    script.
+        var x = {
+        "test": "hello",
+        "thing": "some thing"
+        }
+p.a|#{ '.' + x.title }  #{ x.test }

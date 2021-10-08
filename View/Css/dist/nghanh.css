@@ -1,0 +1,10 @@
+.nghanh {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+.nghanh .card {
+  width: 22rem;
+}

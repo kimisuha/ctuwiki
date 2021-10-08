@@ -1,0 +1,69 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Home Page
+        // CSS only
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous')
+        // JavaScript Bundle with Popper
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ' crossorigin='anonymous')
+        style 
+            include Css/Home.css
+            include Css/new-attention.css
+            include Css/info.css
+            include Css/nghanh.css
+            include Css/menu.css
+            include Css/footer.css
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous")
+
+    body.bg-black
+        .container
+            .header.text-center.text-light
+                img.img-fluid.mt-2(src='https://upload.wikimedia.org/wikipedia/vi/6/6c/Logo_Dai_hoc_Can_Tho.svg' alt='logo')
+                h1 CTU
+            .body
+                .row.menu.m-auto
+                    ul.mt-3
+                        li
+                            a(href='http://localhost:5000/') trang chu
+                        li
+                            a(href='#') thong bao
+                        li
+                            a(href='#') giang vien
+                        li
+                            a(href='#') don vi
+                .row.new-attention
+                    table.table.text-light.text-capitalize
+                        thead
+                            tr
+                                th.left(scope='col')  ma thong bao
+                                th.text-center(scope='col') tieu de thong bao
+                        tbody
+                        each item in attention
+                            
+                        
+                            tr
+                                th.left(scope='row') #{ item._id }
+                                td.text-center #{ item.title }
+                .row.info
+                each item in user
+                    .card
+                        .cr-head
+                            h1.card-title #{ item.name }
+                            p.card-text #{ item.age }
+                        .card-body
+                            p.card-text #{ item.position }
+                
+                    
+                .row.nghanh
+                each item in nghanh                   
+                    .card
+                        .cr-head
+                            h1.card-title #{ item.tennghanh }
+                            p.card-text name khoa
+                        .card-body
+                            p.card-text #{ item.gioithieu }
+            .footer.mt-2
+                h1 @copyright Bui Thanh Loc B1906514

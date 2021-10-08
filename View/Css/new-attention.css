@@ -1,0 +1,10 @@
+.new-attention {
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+.new-attention .table .left {
+  width: 30vh;
+  border-right: 1px solid white;
+  text-align: center;
+}/*# sourceMappingURL=new-attention.css.map */

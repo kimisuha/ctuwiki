@@ -1,0 +1,14 @@
+.add {
+  width: 12rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px solid white;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.add li {
+  list-style: none;
+}/*# sourceMappingURL=add.css.map */
