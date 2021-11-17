@@ -3,7 +3,7 @@ import Nghanh from "../models/Nganh.js";
 
 export const NghanhView = async (req, res) => {
     const info = await Nghanh.findById(req.params.nganh_id);
-    if (Object.keys(info).length === 0 && info.constructor === Object) {
+    /* if (Object.keys(info).length === 0 && info.constructor === Object) {
         res.render('CardAtten.pug', {
             'message': "can't find this document!",
             'class': "btn-warning",
@@ -14,12 +14,18 @@ export const NghanhView = async (req, res) => {
     res.render('NghanhDetail.pug', {
         "message": "detail for " + req.params.nganh_id,
         "info": info
-    })
+    }) */
+
+    if (info != null) {
+        res.status(200).send(info);
+    } else {
+        res.status(500);
+    }
 }
 
-export const CreateNganhView = (req, res) => {
+/* export const CreateNganhView = (req, res) => {
     res.render('CreateNghanh.pug');
-}
+} */
 
 export const CreateNganh = async (req, res) => {
     const info = req.body;
@@ -28,26 +34,29 @@ export const CreateNganh = async (req, res) => {
         const newNghanh = await new Nghanh(info);
         newNghanh.save();
 
-        res.render('CardAtten.pug', {
+        /* res.render('CardAtten.pug', {
             'message': "success create nghanh!",
             'class': "btn-success",
             'info': info
-        });
+        }); */
+
+        res.status(200);
     } catch (err) {
-        res.render('CardAtten.pug', {
+        /* res.render('CardAtten.pug', {
             'message': "fail create nghanh",
             'class': "btn-warning",
             'error': err,
             'info': info
-        });
+        }); */
+        res.status(500).send(err);
     }
 }
 
 export const UpdateNganhView = async  (req, res) => {
     const info = await Nghanh.findById(req.params.nghanh_id);
-    const url = "http://localhost:5000/update-nghanh/" + info._id;
-    res.render('UpdateNghanh.pug', { url, info });
-    //res.send(info);
+/*     const url = "http://localhost:5000/update-nghanh/" + info._id;
+    res.render('UpdateNghanh.pug', { url, info }); */
+    res.send(info);
 }
 
 export const UpdateNganh = async (req, res) => {
@@ -60,26 +69,29 @@ export const UpdateNganh = async (req, res) => {
         await Nghanh.findByIdAndUpdate(info.id, info.change);
         const afterUpdate = Nghanh.findById(info.id);
 
-        res.render('CardAtten.pug', {
+        /* res.render('CardAtten.pug', {
             'message': "success update nghanh",
             'class': "btn-success",
             'info': afterUpdate
-        });
+        }); */
+        res.status(200);
     } catch (err) {
-        res.render('CardAtten.pug', {
+        /* res.render('CardAtten.pug', {
             'message': "fail update nghanh",
             'class': "btn-warning",
             'error': err,
             "info": info
-        });
+        }); */
+
+        res.status(500);
     }
 }
 
-export const DeleteNganhView = async (req, res) => {
+/* export const DeleteNganhView = async (req, res) => {
     const info = await Nghanh.findById(req.params.nganh_id);
     const url = "http://localhost:5000/delete-nghanh/" + info._id
     res.render('DelNghanh', { url, info });
-}
+} */
 
 export const DeleteNganh = async (req, res) => {
     const id = req.params.nganh_id;
@@ -87,18 +99,21 @@ export const DeleteNganh = async (req, res) => {
 
     try {
         await Nghanh.findByIdAndDelete(id);
-        res.render('CardAtten.pug', {
+        /* res.render('CardAtten.pug', {
             'message': "success delete nghanh",
             'class': "btn-success",
             'info': info
-        });
+        }); */
+        res.status(200);
     } catch (err) {
-        res.render('CardAtten.pug', {
+        /* res.render('CardAtten.pug', {
             'message': "fail delete nghanh",
             'class': "btn-warning",
             'error': err,
             "info": info
-        });
+        }); */
+
+        res.status(500);
     }
 }
 

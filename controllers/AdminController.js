@@ -3,7 +3,7 @@ import Attention from "../models/Attention.js";
 import Khoa from "../models/Khoa.js";
 import Nghanh from "../models/Nganh.js";
 
-export const AdminView = async (req, res) => {
+/* export const AdminView = async (req, res) => {
 
     try {
         const user = await User.find();
@@ -22,6 +22,19 @@ export const AdminView = async (req, res) => {
             'err': err
         });
     }
+} */
+
+
+export const AdminView = async (req, res) => {
+    try{
+        const user = await User.find();
+        const atten = await Attention.find();
+        const khoa = await Khoa.find();
+        const nghanh = await Nghanh.find();
+
+        res.status(200).send({ user: user, atten: atten, khoa: khoa, nghanh: nghanh });
+    }
+    catch (err){
+        res.status(500).send(err);
+    }
 }
-
-
