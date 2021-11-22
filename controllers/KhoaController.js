@@ -60,7 +60,7 @@ export const UpdateKhoa = async (req, res) => {
     };
     try {
         await Khoa.findByIdAndUpdate(info.id, info.change);
-        const afterUpdate = await Khoa.findById(info.id);
+        //const afterUpdate = await Khoa.findById(info.id);
 
         res.status(200);/* .render('CardAtten.pug', {
             'message': "success update khoa",

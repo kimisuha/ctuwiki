@@ -1,40 +1,22 @@
 import User from "../models/User.js";
 
 export const UserInfo = async (req, res) => {
-
     const info = await User.findById(req.params.u_id);
-    /* if (Object.keys(info).length === 0 && info.constructor === Object) {
-        res.render('CardAtten.pug', {
-            'message': "can't find this document!",
-            'class': "btn-warning",
-            'info': info
-        });
-    }
-
-    res.render('UserDetail.pug', {
-        "message": "detail for " + req.params.u_id,
-        "info": info
-    }) */
-    if(info != null){
+    
+    try {
         res.status(200).send(info);
+    } catch (err) {
+        res.status(500).send(err);
     }
-    else{
-        res.status(500);
-    }
+    
 }
-
-/* export const NewUserView = (req, res) => {
-
-    res.setTimeout(12000);
-    res.render('AddUser.pug');
-} */
 
 export const NewUser = async (req, res) => {
     const Info = req.body;
     try {
-        const newUser = new User(Info);
-        await newUser.save();
-        res.status(200).send(newUser);
+        const newUser = await new User(Info);
+        newUser.save();
+        res.status(200);
 
     } catch (err) {
         res.status(500).send(err);
@@ -90,10 +72,10 @@ export const UpdateUser = async (req, res) => {
 
 export const DeleteUser = async (req, res) => {
     const id = req.params.u_id;
-    const info =  await User.findById(id);
+    const info = await User.findById(id);
 
     try {
-        
+
         await User.findByIdAndDelete(id);
         /* res.render('CardAtten.pug', {
             'message': "success delete user",
@@ -113,5 +95,5 @@ export const DeleteUser = async (req, res) => {
 
         res.status(500).send(err);
     }
-} 
+}
 
