@@ -44,14 +44,14 @@ export const UpdateUser = async (req, res) => {
 
     try {
         await User.findByIdAndUpdate(info.id, info.change)
-        const afterUpdate = User.findById(info.id);
+        //const afterUpdate = User.findById(info.id);
         /* res.render('CardAtten.pug', {
             'message': "success update for user",
             'class': "btn-success",
             'info': afterUpdate
         }); */
 
-        res.status(200).send(afterUpdate);
+        res.status(200);
     } catch (err) {
         /* res.render('CardAtten.pug', {
             'message': "success update for user",
